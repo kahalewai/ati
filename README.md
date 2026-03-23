@@ -33,15 +33,15 @@ Each layer depends on the trust guarantees provided by the layers below it. No l
 
 The ATI Model maps 55+ standards, specifications, and platform implementations across all eight layers. Here is where things stand:
 
-**Layers 1–3 (Secure Transport, Identity, Session Auth)** — Well-served by mature standards. TLS, X.509, OAuth, OIDC, SPIFFE, and DIDs provide a solid foundation. Emerging work adapts these for agent-specific concerns.
+Layers 1–3 (Secure Transport, Identity, Session Auth) - Well-served by mature standards. TLS, X.509, OAuth, OIDC, SPIFFE, and DIDs provide a solid foundation. Emerging work adapts these for agent-specific concerns.
 
-**Layers 4–5 (Session Governance, Scope Delegation)** — Active frontier. ALS, ADCS, DAE, ACS, AGBAC, and AARM are building the standards that don't yet exist. This is where the most novel work is concentrated.
+Layers 4–5 (Session Governance, Scope Delegation) - Active frontier. ALS, ADCS, DAE, ACS, AGBAC, and AARM are building the standards that don't yet exist. This is where the most novel work is concentrated.
 
-**Layer 6 (Target Integrity)** — Critical gap being addressed. The MCP Integrity Standard (MIS) provides sealed manifests, interface fingerprinting, and version lineage for tool verification. Sigstore, SLSA, and in-toto provide supply-chain foundations.
+Layer 6 (Target Integrity) - Critical gap being addressed. The MCP Integrity Standard (MIS) provides sealed manifests, interface fingerprinting, and version lineage for tool verification. Sigstore, SLSA, and in-toto provide supply-chain foundations.
 
-**Layer 7 (Constraint Enforcement)** — Least mature layer. IBAC, DAE, and AARM provide partial solutions. The semantic mapping problem — connecting abstract constraints like "budget ≤ $1500" to concrete tool parameters like "price" — remains an open challenge.
+Layer 7 (Constraint Enforcement) - Least mature layer. IBAC, DAE, and AARM provide partial solutions. The semantic mapping problem — connecting abstract constraints like "budget ≤ $1500" to concrete tool parameters like "price" — remains an open challenge.
 
-**Layer 8 (Accountability & Audit)** — Fragmented coverage. OpenTelemetry is mature for general observability. No unified agent-specific audit framework exists yet. Multiple emerging specs include audit provisions.
+Layer 8 (Accountability & Audit) - Fragmented coverage. OpenTelemetry is mature for general observability. No unified agent-specific audit framework exists yet. Multiple emerging specs include audit provisions.
 
 <br>
 
@@ -84,10 +84,10 @@ Use the model to position your standard. Which layer(s) does it address? What ar
 
 Use the model to plan incremental adoption:
 
-1. **Phase 1 — Foundation (Layers 1–3):** Extend your existing identity and authorization infrastructure for agent-specific concerns.
-2. **Phase 2 — Governance and Delegation (Layers 4–5):** Add session circuit breaking and delegation chain verification.
-3. **Phase 3 — Integrity and Enforcement (Layers 6–7):** Add tool integrity verification and runtime constraint enforcement.
-4. **Throughout — Audit (Layer 8):** Begin structured audit logging from Phase 1 and expand as each layer is added.
+1. **Phase 1 - Foundation (Layers 1–3):** Extend your existing identity and authorization infrastructure for agent-specific concerns.
+2. **Phase 2 - Governance and Delegation (Layers 4–5):** Add session circuit breaking and delegation chain verification.
+3. **Phase 3 - Integrity and Enforcement (Layers 6–7):** Add tool integrity verification and runtime constraint enforcement.
+4. **Throughout - Audit (Layer 8):** Begin structured audit logging from Phase 1 and expand as each layer is added.
 
 ### For Compliance and Risk Teams
 
@@ -97,13 +97,11 @@ Use the threat model to map agent-specific risks to your existing risk framework
 
 ## Key Design Decisions
 
-**Why "Agent Trust Interconnect"?** Every layer is answering a trust question. The unifying concept across all eight layers is trust — established, constrained, verified, and audited. "Interconnect" communicates that the layers have interfaces and dependencies, not just that they exist as a list.
+Why "Agent Trust Interconnect"? Every layer is answering a trust question. The unifying concept across all eight layers is trust — established, constrained, verified, and audited. "Interconnect" communicates that the layers have interfaces and dependencies, not just that they exist as a list.
 
-**Why eight layers?** Each layer answers a question that no other layer answers. We tested every interface between layers for gaps and found the decomposition to be complete — no trust concern falls between layers, and no two layers answer the same question.
+Why eight layers? Each layer answers a question that no other layer answers. We tested every interface between layers for gaps and found the decomposition to be complete — no trust concern falls between layers, and no two layers answer the same question.
 
-**Why not a networking model?** This isn't about how packets move. It's about how trust and permission move through a system of autonomous actors that interpret, decide, and act rather than simply forwarding.
-
-**Why implementation-agnostic?** The model defines what trust concerns exist and how they relate. Individual standards (ADCS, ALS, DAE, ACS, MIS, AGBAC, IBAC, AARM, etc.) address specific layers. The ATI Model provides the map; the standards provide the implementations.
+Why implementation-agnostic? The model defines what trust concerns exist and how they relate. Individual standards (ADCS, ALS, DAE, ACS, MIS, AGBAC, IBAC, AARM, etc.) address specific layers. The ATI Model provides the map; the standards provide the implementations.
 
 <br>
 
@@ -131,11 +129,11 @@ The ATI Model is a working draft released for community review and feedback. The
 
 The ATI Model is intended as a shared artifact for the AI security and agent infrastructure community. Contributions are welcome:
 
-- **Feedback on layer definitions** — Are the boundaries between layers correct? Does any trust concern fall between layers?
-- **Standards mapping additions** — Is there a standard, specification, or implementation that should be mapped to a layer?
-- **Threat model refinement** — Are there agent-specific threats missing from a layer's threat profile?
-- **OWASP correlation updates** — As OWASP frameworks evolve, correlations should be updated.
-- **Implementation experience** — Reports from teams implementing trust at specific layers validate or challenge the model.
+- Feedback on layer definitions - Are the boundaries between layers correct? Does any trust concern fall between layers?
+- Standards mapping additions - Is there a standard, specification, or implementation that should be mapped to a layer?
+- Threat model refinement - Are there agent-specific threats missing from a layer's threat profile?
+- OWASP correlation updates - As OWASP frameworks evolve, correlations should be updated.
+- Implementation experience - Reports from teams implementing trust at specific layers validate or challenge the model.
 
 ---
 

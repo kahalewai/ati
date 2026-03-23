@@ -1,20 +1,14 @@
 # Agent Trust Interconnect (ATI) Model
 
-The ATI Model is an open reference model that defines the complete set of trust concerns for autonomous AI agent systems. It provides a shared vocabulary for understanding where standards, protocols, and implementations fit — and where gaps remain.
+<br>
 
-**The ATI Model is to autonomous agent trust what the OSI Model is to network interconnection.**
+The ATI Model is an open reference model that defines the complete set of trust concerns for autonomous AI agent systems. It provides a shared vocabulary for understanding where standards, protocols, and implementations fit — and where gaps remain. AI agents delegate tasks to other agents, which invoke tools, which access data — all on behalf of a human who said something like "book me a trip to Tokyo." At every hop in that chain, trust must be verified. Identity must be established. Authorization must be checked. Scope must narrow. Tools must be genuine. Constraints must be enforced. And every decision must be recorded.
 
----
+<br>
 
-## The Problem
+No single standard solves this. The industry is building standards for individual pieces — but without a shared reference model, people conflate layers. They think identity is authorization. They think structural constraint propagation is semantic enforcement. They build systems that handle three concerns well and ignore the other five. The ATI Model provides the missing map.
 
-AI agents delegate tasks to other agents, which invoke tools, which access data — all on behalf of a human who said something like "book me a trip to Tokyo." At every hop in that chain, trust must be verified. Identity must be established. Authorization must be checked. Scope must narrow. Tools must be genuine. Constraints must be enforced. And every decision must be recorded.
-
-No single standard solves this. The industry is building standards for individual pieces — but without a shared reference model, people conflate layers. They think identity is authorization. They think structural constraint propagation is semantic enforcement. They build systems that handle three concerns well and ignore the other five.
-
-The ATI Model provides the map.
-
----
+<br>
 
 ## The Eight Layers
 
@@ -33,18 +27,7 @@ Every agent request logically traverses all eight trust layers. The question is 
 
 Each layer depends on the trust guarantees provided by the layers below it. No layer is sufficient on its own.
 
----
-
-## What's in This Repository
-
-| File | Description |
-|---|---|
-| [`ati-model-v0.1.0.md`](ati-model-v0.1.0.md) | The complete ATI Model specification — layers, standards mapping, threat model, gap analysis |
-| [`ati-model-complete-standards-mapping.html`](ati-model-complete-standards-mapping.html) | Visual reference — all 55+ standards mapped to ATI layers (open in browser, screenshot-ready) |
-| [`ati-model-threat-model.html`](ati-model-threat-model.html) | Visual reference — threat model by layer with OWASP correlations (designed for side-by-side viewing with standards mapping) |
-| [`ati-model-agent-request-flow.html`](ati-model-agent-request-flow.html) | Visual reference — agent request flow through all eight trust layers |
-
----
+<br>
 
 ## Standards Landscape at a Glance
 
@@ -60,7 +43,7 @@ The ATI Model maps 55+ standards, specifications, and platform implementations a
 
 **Layer 8 (Accountability & Audit)** — Fragmented coverage. OpenTelemetry is mature for general observability. No unified agent-specific audit framework exists yet. Multiple emerging specs include audit provisions.
 
----
+<br>
 
 ## Threat Model
 
@@ -85,7 +68,7 @@ Key threats include:
 
 The full threat model with all threats, severity ratings, and OWASP correlations is in the [specification](ati-model-v0.1.0.md#8-threat-model-by-layer) and the [visual reference](ati-model-threat-model.html).
 
----
+<br>
 
 ## How to Use the ATI Model
 
@@ -110,7 +93,7 @@ Use the model to plan incremental adoption:
 
 Use the threat model to map agent-specific risks to your existing risk framework. The OWASP correlations connect ATI threats to established risk taxonomies. The layer model makes residual risk from missing layers explicit and describable for audit purposes.
 
----
+<br>
 
 ## Key Design Decisions
 
@@ -122,7 +105,7 @@ Use the threat model to map agent-specific risks to your existing risk framework
 
 **Why implementation-agnostic?** The model defines what trust concerns exist and how they relate. Individual standards (ADCS, ALS, DAE, ACS, MIS, AGBAC, IBAC, AARM, etc.) address specific layers. The ATI Model provides the map; the standards provide the implementations.
 
----
+<br>
 
 ## Related Work
 
@@ -134,7 +117,7 @@ Use the threat model to map agent-specific risks to your existing risk framework
 | **NIST AI RMF** | AI RMF provides risk management functions (Govern, Map, Measure, Manage). ATI provides the technical decomposition those functions operate against. |
 | **EU AI Act** | EU AI Act requires risk classification, human oversight, and record-keeping. ATI layers map directly to these requirements. |
 
----
+<br>
 
 ## Current Status
 
